@@ -3,19 +3,19 @@ module DailyTrivia
   class Question
     include MongoMapper::Document
     
-    key :question
-    key :date
-    key :correct_answer
-    key :graded?
+    key :question, String
+    key :date, Date
+    key :correct_response, String
+    key :graded, Boolean, :default => false
   end
   
   class Player
     include MongoMapper::Document
     
-    key :name
-    key :email
-    key :points
-    key :bonus_points
+    key :name, String
+    key :email, String
+    key :points, Integer
+    key :bonus_points, Integer
     
     many :responses
   end
@@ -23,10 +23,10 @@ module DailyTrivia
   class Response
     include MongoMapper::EmbeddedDocument
     
-    key :date
-    key :correct?
-    key :bonus_points
-    key :text
+    key :date, Date
+    key :correct, Boolean
+    key :bonus_points, Integer
+    key :text, String
   end
   
 end

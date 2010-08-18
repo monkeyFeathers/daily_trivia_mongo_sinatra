@@ -1,0 +1,15 @@
+%html
+	%head
+		%title daily trivia | add question
+	%body
+		%form{:name => "new_question", :id => "new_question", :action => "/new_question", :method => "post"}
+			Question: 
+			%input{:type => "text", :name => "question"}
+			%br/
+			Correct Answer:
+			%input{:type=>"text", :name=> "correct_response"}
+			%br/
+			Question Date (dd/mm/yyyy): 
+			%input{:type => "text", :name => "q_date"}
+			%br/
+			%input{:type => "submit", :value => "add question", :class => "button"}
