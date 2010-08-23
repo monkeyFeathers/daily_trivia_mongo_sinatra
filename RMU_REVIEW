@@ -1,0 +1,14 @@
+== JAVIER QUIROZ RMU 0 INDIVIDUAL PROJECT: DAILY TRIVIA
+
+As per our IRC discussion, this will not be my final submission for your review, and I will be making further submissions in September
+ 
+== REQUIRED GEMS
+
+mongo_mapper
+sinatra
+haml
+mongo 
+
+== OTHER REQUIREMENTS
+
+MongoDB running on the default port

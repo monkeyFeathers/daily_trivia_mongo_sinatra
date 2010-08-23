@@ -1,12 +1,22 @@
-module DailyTrivia
+
+  MongoMapper.database = 'daily_trivia'
   
   class Question
     include MongoMapper::Document
     
     key :question, String
-    key :date, Date
+    key :date, Time
     key :correct_response, String
     key :graded, Boolean, :default => false
+  end
+  
+  class Response
+    include MongoMapper::EmbeddedDocument
+    
+    key :date, Time
+    key :correct, Boolean
+    key :bonus_points, Integer
+    key :text, String
   end
   
   class Player
@@ -19,14 +29,3 @@ module DailyTrivia
     
     many :responses
   end
-  
-  class Response
-    include MongoMapper::EmbeddedDocument
-    
-    key :date, Date
-    key :correct, Boolean
-    key :bonus_points, Integer
-    key :text, String
-  end
-  
-end

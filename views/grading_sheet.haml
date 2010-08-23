@@ -1,0 +1,14 @@
+%form{:name => "submit_grades", :id => "submit_grades", :action => "/submit_grades", :method => "post"}
+	%table
+	- @players.each do |player|
+		%tr
+		%td= player.first_name
+		%td= player.last_name
+		%td= player.email
+		%td= player.response
+		%td= @correct_response
+		%td
+			%input{:type => "checkbox", :name => "correct"}
+		%td
+			%input{:type => "text", :name => "bonus_points"}
+	%input{:type => "submit", :value => "submit grades", :class => "perseus"}

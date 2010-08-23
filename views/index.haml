@@ -1,3 +1,11 @@
+%h1 Welcome to Daily Trivia
+
+- if @question_added 
+	%h2 Question Added
+	%p= "question: #{@question_added[0]}, correct response: #{@question_added[1]}, send date: #{@question_added[2]}"
+
 %a{:href => "/add_question"} add question
 %br/
-%a{:href => "/grading_sheet"} start grading
+%a{:href => "/add_player"} add player
+%br/
+%a{:href => "/scoring_sheet"} start grading

@@ -1,0 +1,19 @@
+%table
+	- @players.each do |player|
+		%form{:name => "submit_grades", :id => "submit_grades", :action => "/submit_grades/#{@player._id}", :method => "post"}
+		%tr
+			%td= @player.first_name
+			%td= @player.last_name
+			%td= @player.email
+			%td
+				- response_text = String.new
+				- @player.responses.each do |response|
+					- response_text = response.text if response.date == @date
+				- response_text 
+			%td= @question.correct_response
+			%td
+				%input{:type => "checkbox", :name => "correct"}
+			%td
+				%input{:type => "text", :name => "bonus_points"}
+		%tr
+			%input{:type => "submit", :value => "submit grades", :class => "perseus"}
