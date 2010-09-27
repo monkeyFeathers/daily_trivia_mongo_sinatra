@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'lib/daily_trivia'
+require 'mail'
 
 
   get '/' do
@@ -22,9 +23,9 @@ require 'lib/daily_trivia'
     correct_response = params["correct_response"]
     date = params["q_date"].split("/")
     date = Time.mktime(date[2],date[0],date[1])
-    @q = Question.create(:date => date,:question => question, :correct_response => correct_response)
-    @question_added = []
-    [question, correct_response, date].each {|ob| @question_added << ob}
+    # @q = Question.create(:date => date,:question => question, :correct_response => correct_response)
+    #     @question_added = []
+    #     [question, correct_response, date].each {|ob| @question_added << ob}
     haml :index
   end
 
@@ -65,3 +66,13 @@ require 'lib/daily_trivia'
 ######################################################
 # running and sending reports
 #####################################################
+
+
+######################################################
+# helpers
+#####################################################
+
+  helpers do
+    
+  end
+

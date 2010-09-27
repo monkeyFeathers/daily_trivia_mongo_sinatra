@@ -1,7 +1,10 @@
-lib_dir = File.dirname(__FILE__) + '/../lib'
+lib_dir = File.dirname(__FILE__) + '/..'
+$LOAD_PATH.unshift lib_dir unless $:.include?(lib_dir)
 require 'rubygems'
+require 'daily_trivia'
 require 'test/unit'
+require 'rack/test'
 require 'fileutils'
 require 'contest'
-$LOAD_PATH.unshift lib_dir unless $:.include?(lib_dir)
-require 'daily_trivia'
+require 'rr'
+ENV['RACK_ENV'] = 'test'

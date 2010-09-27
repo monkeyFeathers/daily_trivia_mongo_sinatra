@@ -4,9 +4,9 @@
   class Question
     include MongoMapper::Document
     
-    key :question, String
-    key :date, Time
-    key :correct_response, String
+    key :question, String, :required => true
+    key :correct_response, String, :required => true
+    key :date, Time, :required => true
     key :graded, Boolean, :default => false
   end
   

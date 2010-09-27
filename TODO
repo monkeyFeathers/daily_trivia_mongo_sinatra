@@ -1,0 +1,14 @@
+1. CREATE MAIL
+	GET the question for today
+	BUILD the email to go to players
+	SEND the email
+	
+2. READ AND PARSE PLAYER RESPONSES
+	GET responses from each player
+	PARSE the answers from the response
+	PUT into record for each player
+	
+3. GRADING/SCORING
+	GET all responses for all players who answered the questions
+	SHOW responses in a table with the ability to edit responses
+	UPDATE player with the grade that player received for his/her given answer
